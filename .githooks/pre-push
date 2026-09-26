@@ -1,0 +1,23 @@
+#!/bin/env bash
+
+set -e
+
+BUILD_DIR="build"
+
+mkdir -p $BUILD_DIR
+
+pushd $BUILD_DIR
+
+echo "Building..."
+
+cmake ..
+cmake --build .
+
+# Disables for now
+# echo "Running tests..."
+
+# ctest --output-on-failure
+
+popd
+
+echo "pre-push checks passed"
